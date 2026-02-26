@@ -225,8 +225,8 @@ void displayData(BoardType boardType, int hours, int minutes, int row) {
     bool flipHoursUnits = (row == 2 || row == 4 || row == 5 || row == 6 || row == 7);
     
     // Определяем, нужно ли повернуть десятки часов на 180 градусов
-    // Поворачиваем на строках: 2, 3, 4, 5, 6, 7
-    bool flipHoursTens = (row == 2 || row == 3 || row == 4 || row == 5 || row == 6 || row == 7);
+    // Поворачиваем на строках: 1, 2, 3, 4, 5, 6, 7
+    bool flipHoursTens = (row == 1 || row == 2 || row == 3 || row == 4 || row == 5 || row == 6 || row == 7);
     
     // Формируем массив данных для отправки
     // Порядок отправки: [0]->[4] (первый байт уходит в 1-ю микросхему)
@@ -381,15 +381,17 @@ void multiplexDisplay(BoardType boardType) {
     
     // Определяем, нужно ли повернуть единицы часов на 180 градусов
     // Поворачиваем на строках: 2, 4, 5, 6, 7
-    bool flipHoursUnits = (g_currentMultiplexRow == 2 ||
+    bool flipHoursUnits = (g_currentMultiplexRow == 1 ||
+                           g_currentMultiplexRow == 2 ||
                            g_currentMultiplexRow == 4 ||
                            g_currentMultiplexRow == 5 ||
                            g_currentMultiplexRow == 6 ||
                            g_currentMultiplexRow == 7);
     
     // Определяем, нужно ли повернуть десятки часов на 180 градусов
-    // Поворачиваем на строках: 2, 3, 4, 5, 6, 7
-    bool flipHoursTens = (g_currentMultiplexRow == 2 ||
+    // Поворачиваем на строках: 1, 2, 3, 4, 5, 6, 7
+    bool flipHoursTens = (g_currentMultiplexRow == 1 ||
+                          g_currentMultiplexRow == 2 ||
                           g_currentMultiplexRow == 3 ||
                           g_currentMultiplexRow == 4 ||
                           g_currentMultiplexRow == 5 ||
